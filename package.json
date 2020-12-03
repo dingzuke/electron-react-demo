@@ -1,0 +1,72 @@
+{
+  "name": "electron-react-demo",
+  "version": "0.1.0",
+  "private": true,
+  "author": "dingzuke 675129745@qq.com",
+  "contributors": [{
+    "name": "dingzuke",
+    "email": "675129745@qq.com",
+    "url": "http://www.ding51.cn"
+  }],
+  "main": "main.js",
+  "homepage": ".",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "3.4.4"
+  },
+  "build": {
+    "extends": null,
+    "directories": {
+      "buildResources": "assets"
+    },
+    "appId": "com.dtest.app",
+    "mac": {
+      "target": ["dmg","zip"],
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": ["nsis","zip"]
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
+},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "electron-build:mac": "electron-packager ./build electron-react-demo --platform=darwin --arch=x64 --out ./buildApp --electron-version 10.1.4",
+    "electron-build:linux": "electron-packager ./build electron-react-demo --platform=linux --arch=x64 --out ./buildApp --electron-version 10.1.4",
+    "electron-build:mas": "electron-packager ./build electron-react-demo --platform=mas --arch=x64 --out ./buildApp --electron-version 10.1.4",
+    "electron-build:win32": "electron-packager ./build electron-react-demo --platform=win32 --arch=x64 --out ./buildApp --electron-version 10.1.4",
+    "electron-builder:win": "electron-builder --win --x64",
+    "electron-builder:linux": "electron-builder --linux deb",
+    "electron-builder:mac": "electron-builder --mac"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^10.1.4",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.1.0"
+  }
+}
